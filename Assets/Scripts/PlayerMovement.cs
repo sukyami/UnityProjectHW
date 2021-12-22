@@ -32,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(0, 0, (forwardForce - speedForce) * Time.deltaTime);
         }
 
+        if(rb.position.y < -1f)
+        {
+            FindObjectOfType<Gamemanager>().EndGame(); 
+        }
 
 
     }
